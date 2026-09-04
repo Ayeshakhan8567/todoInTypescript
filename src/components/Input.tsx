@@ -12,7 +12,7 @@ const Input = ({inputValue, setInputValue, savetask, displayTasks,display}: Inpu
   return (
     <> 
     <input 
-      className="border border-gray-300 rounded-md p-2 w-full"
+      className="border border-gray-600 rounded-md p-2 w-full"
       type="text" 
       placeholder="Add task" 
       value={inputValue}
