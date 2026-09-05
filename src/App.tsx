@@ -13,10 +13,15 @@ const handleCheckBoxChange = (index: number) => {
   newList[index].completed = !newList[index].completed;
   setList(newList);
 };
+  const [search, setSearchValue] = useState<string>('');
   const [list, setList] = useState<Task[]>([])
   const [inputValue, setInputValue] = React.useState('')
   const [editIndex, setEditIndex] = React.useState<number | null>(null);
   const [display, setDisplay] = React.useState<boolean>(true);
+  
+  const filteredList = list.filter((task) =>
+  task.text.toLowerCase().includes(search.toLowerCase())
+);
 
   function savetask() {
   if (editIndex !== null) {
@@ -61,11 +66,13 @@ const handleCheckBoxChange = (index: number) => {
         display={display}
         inputValue={inputValue}
         setInputValue={setInputValue}
+        search={search}
+        setSearchValue={setSearchValue}
       />
 
       <List
       
-        list={list}
+        list={filteredList}
         deletetask={deletetask}
         edittask={edittask}
         display={display}
