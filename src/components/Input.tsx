@@ -10,7 +10,7 @@ type InputProps = {
   search: string;
 };
 
-const Input = ({inputValue, setInputValue, savetask, displayTasks,display,setSearchValue, search}: InputProps) => {
+const Input = ({inputValue, setInputValue, savetask, displayTasks,display,setSearchValue,search}: InputProps) => {
   return (
     <> 
     <input 
@@ -41,6 +41,7 @@ const Input = ({inputValue, setInputValue, savetask, displayTasks,display,setSea
       {display ? "Hide" : "Show"}
     </button>
       
+  
       
 
 
